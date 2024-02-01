@@ -1,4 +1,7 @@
-		<div class="w3l_banner_nav_right">
+<!-- banner -->
+<div class="banner">
+	<?= $this->render('//layouts/inc/sidebar') ?>
+	<div class="w3l_banner_nav_right">
 			<section class="slider">
 				<div class="flexslider">
 					<ul class="slides">
@@ -30,9 +33,9 @@
 				</div>
 			</section>
 
-		</div>
-		<div class="clearfix"></div>
 	</div>
+	<div class="clearfix"></div>
+</div>
 <!-- banner -->
 	<div class="banner_bottom">
 			<div class="wthree_banner_bottom_left_grid_sub">
@@ -67,7 +70,7 @@
 			<div class="clearfix"> </div>
 	</div>
 <!-- top-brands -->
-<?php if(!empty($offers)): ?>
+	<?php if(!empty($offers)): ?>
 	<div class="top-brands">
 		<div class="container">
 			<h3>Hot Offers</h3>
