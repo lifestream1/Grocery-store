@@ -5,7 +5,7 @@ namespace app\components;
 use app\models\Category;
 
 
-Class TreeTitle
+Class TreeCatigories
 {
 
 		public $element_id;
@@ -18,7 +18,7 @@ Class TreeTitle
 		}
 
 
-		public static function listTitle($element_id)
+		public static function listCategoriesTree($element_id)
 		{
 				$list_id = [];
 				while($element_id > 0){

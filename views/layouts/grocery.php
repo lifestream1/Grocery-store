@@ -40,8 +40,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<a href="products.html">Today's special Offers !</a>
 		</div>
 		<div class="w3l_search">
-			<form action="#" method="post">
-				<input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+			<form action="<?= Url::to(['category/search']) ?>" method="get">
+				<input type="text" name="q" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
 				<input type="submit" value=" ">
 			</form>
 		</div>
@@ -78,7 +78,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="logo_products">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
-				<h1><a href="<?= \yii\helpers\Url::home() ?>"><span>Grocery</span> Store</a></h1>
+				<h1><a href="<?= Url::home() ?>"><span>Grocery</span> Store</a></h1>
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="special_items">

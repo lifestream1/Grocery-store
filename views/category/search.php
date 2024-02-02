@@ -4,14 +4,12 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 ?>
-
-
 <!-- products-breadcrumb -->
 <div class="products-breadcrumb">
 		<div class="container">
 			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a href="<?=Url::home() ?>">Home</a><span>|</span></li>
-				<li><?= \app\components\TreeCatigories::listCategoriesTree($id) ?></li>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="<?= Url::home() ?>">Home</a><span>|</span></li>
+				<li>Поиск</li>
 			</ul>
 		</div>
 	</div>
@@ -72,9 +70,16 @@ use yii\widgets\LinkPager;
 				<div class="clearfix"> </div>
 			</div>
 			<div class="w3ls_w3l_banner_nav_right_grid ">
-				<h3><?= $category->title ?></h3>
+			<h3>Результаты поиска</h3>
+			<p>По запросу <b><?= Html::encode($q).'</b> найдено  '.$pages->totalCount. ' ' .number($pages->totalCount, array('товар', 'товара', 'товаров'));?> </p>				
+		<?php
+			function number($n, $titles) {
+				$cases = array(2, 0, 1, 1, 1, 2);
+				return $titles[($n % 100 > 4 && $n % 100 < 20) ? 2 : $cases[min($n % 10, 5)]];
+			}				
+		?>
 
-				
+
 		<?php
  		if(!empty($products)): ?>
 				<div class="w3ls_w3l_banner_nav_right_grid1">
@@ -135,7 +140,7 @@ use yii\widgets\LinkPager;
 				</div>
 				<?php else: ?>
 					<div class="w3ls_w3l_banner_nav_right_grid1">
-							<h6>Здесь пока нет товаров...</h6>
+							<!-- <h6>По запросу ничего не найдено...</h6> -->
 					</div>
 				<?php endif; ?>
 			</div>
