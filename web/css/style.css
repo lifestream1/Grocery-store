@@ -35,6 +35,9 @@ body a:hover{
 	left:0;
 	z-index:9999;
 }
+.product_margin{
+	margin-bottom: 30px;
+}
 span.glyphicon.glyphicon-shopping-cart.my-cart-icon.my-cart-icon-affix {
 	position: relative !important;
 }
@@ -1711,6 +1714,16 @@ h2.typoh2{
 		margin-bottom: 0em;
 	}
 }
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background-color: #FA1818;
+	border-color: #FA1818;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus, .pagination > li > a, .pagination > li > span {
+	color: #FA1818;
+}
+
 @media (max-width:640px){
 	h1, .h1, h2, .h2, h3, .h3 {
 		margin-top: 0px;
