@@ -10,13 +10,6 @@ Class TreeCatigories
 
 		public $element_id;
 
-		public function init()
-		{
-			if($this->element_id === null){
-				$this->element_id = 0;
-			}
-		}
-
 
 		public static function listCategoriesTree($element_id)
 		{

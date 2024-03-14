@@ -71,13 +71,7 @@ use yii\widgets\LinkPager;
 			</div>
 			<div class="w3ls_w3l_banner_nav_right_grid ">
 			<h3>Результаты поиска</h3>
-			<p>По запросу <b><?= Html::encode($q).'</b> найдено  '.$pages->totalCount. ' ' .number($pages->totalCount, array('товар', 'товара', 'товаров'));?> </p>				
-		<?php
-			function number($n, $titles) {
-				$cases = array(2, 0, 1, 1, 1, 2);
-				return $titles[($n % 100 > 4 && $n % 100 < 20) ? 2 : $cases[min($n % 10, 5)]];
-			}				
-		?>
+			<p>По запросу <b><?= Html::encode($q).'</b> найдено  '.$pages->totalCount. ' ' .\app\components\SearchCountWord::number($pages->totalCount);?> </p>				
 
 
 		<?php
@@ -108,20 +102,9 @@ use yii\widgets\LinkPager;
 											</h4>
 										</div>
 										<div class="snipcart-details">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="knorr instant soup" />
-													<input type="hidden" name="amount" value="3.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button" />
-												</fieldset>
-											</form>
+
+											<a href="<?= Url::to(['cart/add', 'id' => $product->id]) ?>" data-id="<?= $product->id ?>" class="button add-to-cart">Add to cart</a>
+											
 										</div>
 									</div>
 								</figure>
